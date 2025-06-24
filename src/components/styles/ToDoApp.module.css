@@ -1,11 +1,15 @@
 .container {
   max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
+  width: 80%;
+  /* min-height: 100dvh; */
+  margin: 0 auto;
+  padding:20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   display: flex;flex-direction: column;gap: 10px;
   position: relative;
+  box-sizing: border-box;
+
 }
 .title {
 font-size: 25px;font-weight: 700;line-height: 1.5;
