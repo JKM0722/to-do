@@ -5,6 +5,7 @@ import ToDoList from "./ToDoList";
 import ToDoInput from "./ToDoInput";
 import ToDoFilter from "./ToDoFilter";
 import styles from "./styles/ToDoApp.module.css";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const LOCAL_STORAGE_KEY = "todoItems";
 
@@ -51,6 +52,7 @@ const ToDoApp = () => {
 
   return (
     <div className={styles.container}>
+      <ThemeToggleButton />
       <h1 className={styles.title}>To-Do List</h1>
       <ToDoInput onAdd={handleAdd} />
       <ToDoFilter filter={filter} setFilter={setFilter} />
