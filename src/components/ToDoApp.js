@@ -54,9 +54,9 @@ const ToDoApp = () => {
     <div className={styles.container}>
       <ThemeToggleButton />
       <h1 className={styles.title}>To-Do List</h1>
-      <ToDoInput onAdd={handleAdd} />
       <ToDoFilter filter={filter} setFilter={setFilter} />
       <ToDoList todos={filteredTodos} onToggle={handleToggle} onDelete={handleDelete} />
+      <ToDoInput onAdd={handleAdd} />
     </div>
   );
 };
