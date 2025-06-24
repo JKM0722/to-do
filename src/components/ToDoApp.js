@@ -23,7 +23,6 @@ const ToDoApp = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  // 할 일 추가
   const handleAdd = (text) => {
     setTodos([
       ...todos,
@@ -31,7 +30,6 @@ const ToDoApp = () => {
     ]);
   };
 
-  // 체크박스 토글
   const handleToggle = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -40,12 +38,10 @@ const ToDoApp = () => {
     );
   };
 
-  // 삭제
   const handleDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // 필터링
   const filteredTodos =
     filter === "all"
       ? todos
