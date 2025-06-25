@@ -10,7 +10,10 @@ import ThemeToggleButton from "./ThemeToggleButton";
 const LOCAL_STORAGE_KEY = "todoItems";
 
 const ToDoApp = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { id: 1, text: "리액트 공부하기", completed: false },
+    { id: 2, text: "투두리스트 만들기", completed: false }
+  ]);
   const [filter, setFilter] = useState("all");
 
   // 로컬스토리지에서 불러오기
@@ -24,15 +27,21 @@ const ToDoApp = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
+  // setTodos 호출 시 콘솔 로그 출력을 위한 래퍼 함수
+  const updateTodos = (newTodos) => {
+    console.log("todos 업데이트:", newTodos);
+    setTodos(newTodos);
+  };
+
   const handleAdd = (text) => {
-    setTodos([
+    updateTodos([
       ...todos,
       { id: Date.now(), text, completed: false },
     ]);
   };
 
   const handleToggle = (id) => {
-    setTodos(
+    updateTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
@@ -40,7 +49,7 @@ const ToDoApp = () => {
   };
 
   const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    updateTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const filteredTodos =

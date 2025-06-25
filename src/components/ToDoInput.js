@@ -12,16 +12,18 @@ const ToDoInput = ({ onAdd }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <input
-        className={styles.input}
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="할 일을 입력하세요"
-      />
-      <button className={styles.addBtn} type="submit">추가</button>
-    </form>
+    <div className={styles.inputBox}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          className={styles.input}
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="할 일을 입력하세요"
+        />
+        <button className={styles.addBtn} type="submit">추가</button>
+      </form>
+    </div>
   );
 };
 

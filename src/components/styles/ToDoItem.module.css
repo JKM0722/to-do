@@ -3,6 +3,12 @@
   align-items: center;
   gap: 8px;
   padding: 4px 0;
+  label {
+    cursor: pointer;
+  }
+  input{
+    cursor: pointer;
+  }
 }
 .text {
   flex: 1;
