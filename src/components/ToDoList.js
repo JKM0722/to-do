@@ -7,8 +7,14 @@ const ToDoList = ({ todos, onToggle, onDelete }) => {
   return (
     <ul className={styles.list}>
       {/* todos 배열을 순회하며 각 할 일 항목을 ToDoItem 컴포넌트로 렌더링 */}
-      {todos.map((todo) => (
-        <ToDoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
+      {todos.map((todo, index) => (
+        <ToDoItem 
+          key={todo.id} 
+          todo={todo} 
+          index={index + 1} 
+          onToggle={onToggle} 
+          onDelete={onDelete} 
+        />
       ))}
     </ul>
   );
